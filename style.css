@@ -27,6 +27,9 @@ body {
 *::before,
 *::after {
     box-sizing: border-box;
+    font-family: "Space Mono", serif;
+        font-weight: 400;
+        font-style: normal;
     /* Ensure padding and border are included in element's total width and height */
 }
 
@@ -478,4 +481,14 @@ footer {
     /* Slightly lighter gold on hover */
     transform: scale(1.03);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+}
+
+
+
+/* style.css - (Add Media Queries to exisiting styles) */
+
+@media (max-width: 768px) {
+    nav ul li {
+        margin: 1.5rem;
+    }
 }
