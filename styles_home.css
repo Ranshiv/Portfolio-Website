@@ -1,629 +1,6 @@
-/* styles_home.css - Home Page Specific Styles */
+/* styles_home.css - Home Page Specific Styles (Enhanced Skill Card Design) */
 
-/* ------------------------------------ */
-/*              Hero Section (Home)     */
-/* ------------------------------------ */
-
-.hero-section {
-    position: relative;
-    /* For positioning particle background absolutely */
-    overflow: hidden;
-    /* Clip particles within hero section */
-    padding: 12rem 0;
-    /* Increased padding for a larger hero area */
-    text-align: center;
-    color: #fff;
-    /* Default text color for hero section */
-}
-
-#particles-js {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: #1a1a1a;
-    /* Fallback background color if particles don't load */
-    z-index: 0;
-    /* Place particles behind content */
-}
-
-.hero-content {
-    position: relative;
-    /* Ensure hero content is above particles */
-    z-index: 1;
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 0 2rem;
-}
-
-.hero-title {
-    font-size: 4rem;
-    /* Larger, more impactful title */
-    font-weight: 700;
-    letter-spacing: 0.15em;
-    /* Wider letter spacing for title */
-    margin-bottom: 0.5rem;
-    text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
-    /* More pronounced text shadow */
-    opacity: 0;
-    /* Initial opacity for fade-in animation */
-    transform: translateY(20px);
-    /* Initial position for slide-up animation */
-    animation: fadeInUp 1.2s ease-out 0.3s forwards;
-    /* Fade-in and slide-up animation */
-}
-
-.hero-tagline {
-    font-size: 1.5rem;
-    /* Slightly larger tagline */
-    color: #eee;
-    /* Softer white for tagline */
-    font-weight: 400;
-    margin-bottom: 2.5rem;
-    /* More space below tagline */
-    opacity: 0;
-    /* Initial opacity for fade-in animation */
-    transform: translateY(20px);
-    /* Initial position for slide-up animation */
-    animation: fadeInUp 1.2s ease-out 0.6s forwards;
-    /* Fade-in and slide-up animation, delayed start */
-}
-
-.cta-button {
-    display: inline-block;
-    padding: 1.3rem 3rem;
-    /* Slightly larger button */
-    background-color: #00ffff;
-    /* Cyan button color */
-    color: #222;
-    /* Dark text on button */
-    text-decoration: none;
-    font-weight: 600;
-    border-radius: 35px;
-    /* More rounded button */
-    transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
-    border: 2px solid transparent;
-    font-size: 1.1rem;
-    /* Slightly larger button text */
-    opacity: 0;
-    /* Initial opacity for fade-in animation */
-    transform: translateY(20px);
-    /* Initial position for slide-up animation */
-    animation: fadeInUp 1.2s ease-out 0.9s forwards;
-    /* Fade-in and slide-up animation, further delayed start */
-}
-
-.cta-button:hover {
-    background-color: #00dddd;
-    /* Slightly darker cyan on hover */
-    transform: scale(1.05);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
-    border-color: #fff;
-    /* White border on hover */
-}
-
-/* Fade-in and Slide-up Animation Keyframes */
-@keyframes fadeInUp {
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-/* styles_home.css - Home Page Specific Styles (Updated) */
-
-/* ... (Hero Section Styles - keep these as they are) ... */
-
-/* ------------------------------------ */
-/*              Quotes Section          */
-/* ------------------------------------ */
-
-.quotes-section {
-    background-color: #222; /* Slightly darker background for quotes section */
-    padding: 8rem 0;
-    text-align: center;
-}
-
-.quotes-section h2 {
-    color: #00ffff; /* Accent color heading for quotes */
-    margin-bottom: 4rem; /* More space below heading */
-}
-
-.quote-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive quote grid */
-    gap: 3rem;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 2rem;
-}
-
-.quote-item {
-    padding: 2.5rem;
-    background-color: #2a2a2a; /* Darker quote background */
-    border-radius: 10px;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-}
-
-.quote-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
-}
-
-.quote-item p {
-    font-size: 1.2rem;
-    line-height: 1.8;
-    font-style: italic;
-    color: #ddd;
-    margin-bottom: 1.5rem;
-}
-
-.quote-item footer {
-    font-size: 0.9rem;
-    color: #aaa;
-    text-align: right;
-}
-
-/* ------------------------------------ */
-/*              Features Section         */
-/* ------------------------------------ */
-
-.features-section {
-    background-color: #1a1a1a; /* Back to main background color for features */
-    padding: 8rem 0;
-    text-align: center;
-}
-
-.features-section h2 {
-    color: #ffcc00; /* Gold accent color for features heading */
-    margin-bottom: 4rem; /* More space below heading */
-}
-
-.feature-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive feature grid */
-    gap: 3rem;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 2rem;
-}
-
-.feature-item {
-    padding: 2.5rem;
-    background-color: #222; /* Darker feature background */
-    border-radius: 10px;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-}
-
-.feature-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
-}
-
-.feature-icon {
-    display: inline-block;
-    font-size: 3rem; /* Adjust icon size */
-    color: #00ffff; /* Cyan icon color */
-    margin-bottom: 1.5rem;
-    /* You might need to style this further depending on the icon type */
-}
-
-.feature-item h3 {
-    font-size: 1.5rem;
-    color: #f0f0f0;
-    margin-bottom: 1rem;
-}
-
-.feature-item p {
-    color: #bbb;
-}
-/* styles_home.css - Home Page Specific Styles (Revised) */
-
-/* ------------------------------------ */
-/*              Hero Section (Home)     */
-/* ------------------------------------ */
-
-.hero-section {
-    position: relative;
-    overflow: hidden;
-    padding: 12rem 0;
-    text-align: center;
-    /* Keep text centered initially */
-    color: #fff;
-}
-
-#particles-js {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: #1a1a1a;
-    z-index: 0;
-}
-
-.hero-content {
-    position: relative;
-    z-index: 1;
-    max-width: 1200px;
-    /* Wider hero content area */
-    margin: 0 auto;
-    padding: 0 2rem;
-    display: flex;
-    /* Use flexbox for the two-column layout */
-    align-items: center;
-    /* Vertically center content */
-    justify-content: center;
-    /* Push content to the right (text will be on the right) */
-}
-
-.hero-text {
-    text-align: center;
-    max-width: 600px;
-}
-
-.hero-title {
-    font-size: 4rem;
-    font-weight: 700;
-    letter-spacing: 0.15em;
-    margin-bottom: 0.5rem;
-    text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
-    /* Removed opacity and animation properties - handled by Typed.js now */
-}
-
-/* Style for the typed-text span within the h1 */
-.typed-text {
-    color: #00ffff;
-    /* Cyan color for the typed text */
-}
-
-.hero-tagline {
-    font-size: 1.5rem;
-    color: #eee;
-    font-weight: 400;
-    margin-bottom: 2.5rem;
-    /* Removed opacity and animation properties */
-}
-
-.cta-button {
-    display: inline-block;
-    padding: 1.3rem 3rem;
-    background-color: #00ffff;
-    color: #222;
-    text-decoration: none;
-    font-weight: 600;
-    border-radius: 35px;
-    transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
-    border: 2px solid transparent;
-    font-size: 1.1rem;
-    /* Removed opacity and animation properties */
-}
-
-.cta-button:hover {
-    background-color: #00dddd;
-    transform: scale(1.05);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
-    border-color: #fff;
-}
-
-.social-icons {
-    position: absolute;
-    top: 1.5rem;
-    /* Adjust as needed */
-    right: 2rem;
-    /* Adjust as needed */
-}
-
-.social-icons a {
-    color: white;
-    margin-left: 20px;
-    /* Space out the icons */
-}
-
-.social-icons a:hover {
-    color: #00ffff;
-}
-
-
-
-
-
-
-
-
-
-/* styles_home.css - Home Page Specific Styles (Revised - Responsive) */
-
-/* ... (Keep all the existing styles from the previous version) ... */
-
-/* ------------------------------------ */
-/*        Media Queries (Responsive)      */
-/* ------------------------------------ */
-
-/* --- Small Tablets and Phones (Portrait) --- */
-@media (max-width: 768px) {
-    .hero-section {
-        padding: 6rem 0;
-        /* Reduce padding on smaller screens */
-    }
-
-    .hero-content {
-        flex-direction: column;
-        /* Stack content vertically */
-        align-items: center;
-        /* Center content */
-        justify-content: center;
-        /* Center content vertically */
-        text-align: center;
-        /* Center-align text on smaller screens */
-    }
-
-    .hero-text {
-        text-align: center;
-        max-width: 600px;
-    }
-
-    .hero-title {
-        font-size: 2.5rem;
-        /* Smaller title font size */
-        letter-spacing: 0.1em;
-        /* Reduce letter spacing */
-    }
-
-    .hero-tagline {
-        font-size: 1.2rem;
-        /* Smaller tagline font size */
-    }
-
-    .cta-button {
-        padding: 1rem 2rem;
-        /* Smaller button padding */
-        font-size: 1rem;
-        /* Smaller button font size */
-    }
-
-    .social-icons {
-        position: static;
-        /* Remove absolute positioning */
-        text-align: center;
-        /* Center the social icons */
-        margin-top: 1rem;
-        /* Add some space above the icons */
-        padding-bottom: 23px;
-    }
-
-    .social-icons a {
-        margin: 0 10px;
-        /* Adjust horizontal spacing */
-    }
-}
-
-/* --- Larger Phones (Landscape) and Small Tablets (Landscape) --- */
-@media (min-width: 769px) and (max-width: 1024px) {
-    .hero-title {
-        font-size: 3rem;
-        /* Slightly smaller title font size */
-    }
-}
-/* * --- Skills Section (Revised for Cards) --- */
- .skills-section {
-    background-color: #222;
-    padding: 8rem 0;
-    text-align: center;
-}
-
-.skills-section h2 {
-    color: #00ffff;
-    margin-bottom: 4rem;
-}
-
-.skills-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    /* Responsive cards */
-    gap: 3rem;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 2rem;
-}
-
-.skills-card {
-    background-color: #2a2a2a;
-    border-radius: 10px;
-    padding: 2rem;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-}
-
-.skills-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
-}
-
-.skills-card h3 {
-    color: #f0f0f0;
-    margin-bottom: 1.5rem;
-    font-size: 1.3rem;
-    text-align: left;
-    /* Left-align category titles */
-}
-
-.skills-card-content {
-    display: flex;
-    /* Use flexbox to arrange skill items */
-    flex-wrap: wrap;
-    /* Allow items to wrap to the next line */
-    justify-content: flex-start;
-    /* Align items to the start (left) */
-    gap: 1.5rem;
-    /* Spacing between skill items */
-}
-
-.skill-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    /* Center icon and text vertically */
-    /* Removed padding from here - it's on the card now */
-}
-
-.skill-icon {
-    font-size: 2rem;
-    /* Slightly smaller icon size */
-    color: #00ffff;
-    margin-bottom: 0.5rem;
-    /* Less space between icon and text */
-}
-
-.skill-item p {
-    font-size: 1rem;
-    /* Slightly smaller text size */
-    color: #eee;
-    margin: 0;
-    text-align: center;
-    /* Ensure text is centered */
-}
-
-/* --- Media Queries (Responsive) --- */
-/* Small devices */
-@media (max-width: 768px) {
-    .skills-section {
-        padding: 4rem 0;
-    }
-
-    .skills-grid {
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        /* Smaller cards on small screens */
-        gap: 1.5rem;
-    }
-
-    .skill-icon {
-        font-size: 1.7rem;
-    }
-
-    .skills-card h3 {
-        font-size: 1.1rem;
-    }
-
-    .skill-item p {
-        font-size: 0.9rem;
-    }
-}
-/* styles_home.css - Home Page Specific Styles (Updated - Skills Cards) */
-
-/* ... (Keep all existing Hero Section and previous Skills Section styles) ... */
-
-/* --- Skills Section (Revised for Cards) --- */
-
-.skills-section {
-    background-color: #222;
-    padding: 8rem 0;
-    text-align: center;
-}
-
-.skills-section h2 {
-    color: #00ffff;
-    margin-bottom: 4rem;
-}
-
-.skills-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    /* Responsive cards */
-    gap: 3rem;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 2rem;
-}
-
-.skills-card {
-    background-color: #2a2a2a;
-    border-radius: 10px;
-    padding: 2rem;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-}
-
-.skills-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
-}
-
-.skills-card h3 {
-    color: #f0f0f0;
-    margin-bottom: 1.5rem;
-    font-size: 1.3rem;
-    text-align: left;
-    /* Left-align category titles */
-}
-
-.skills-card-content {
-    display: flex;
-    /* Use flexbox to arrange skill items */
-    flex-wrap: wrap;
-    /* Allow items to wrap to the next line */
-    justify-content: flex-start;
-    /* Align items to the start (left) */
-    gap: 1.5rem;
-    /* Spacing between skill items */
-}
-
-.skill-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    /* Center icon and text vertically */
-    /* Removed padding from here - it's on the card now */
-}
-
-.skill-icon {
-    font-size: 2rem;
-    /* Slightly smaller icon size */
-    color: #00ffff;
-    margin-bottom: 0.5rem;
-    /* Less space between icon and text */
-}
-
-.skill-item p {
-    font-size: 1rem;
-    /* Slightly smaller text size */
-    color: #eee;
-    margin: 0;
-    text-align: center;
-    /* Ensure text is centered */
-}
-
-/* --- Media Queries (Responsive) --- */
-/* Small devices */
-@media (max-width: 768px) {
-    .skills-section {
-        padding: 4rem 0;
-    }
-
-    .skills-grid {
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        /* Smaller cards on small screens */
-        gap: 1.5rem;
-    }
-
-    .skill-icon {
-        font-size: 1.7rem;
-    }
-
-    .skills-card h3 {
-        font-size: 1.1rem;
-    }
-
-    .skill-item p {
-        font-size: 0.9rem;
-    }
-}
+/* ... (Keep Hero Section styles, as they are correct) ... */
 /* styles_home.css - Home Page Specific Styles (Enhanced Skill Card Design) */
 
 /* ... (Keep Hero Section styles) ... */
@@ -720,7 +97,7 @@
 }
 
 .skills-card h3 {
-    /* font-family: 'Rajdhani', sans-serif; */
+    font-family: 'Rajdhani', sans-serif;
     /* Different font for category titles */
     color: #00ffff;
     /* Cyan title */
@@ -755,7 +132,7 @@
     /* Fixed height for skill items */
     border-radius: 10px;
     /* Rounded skill item container */
-    /* background-color: rgba(255, 255, 255, 0.3); */
+    background-color: rgba(0, 0, 0, 0.3);
     /* Semi-transparent background */
     transition: background-color 0.3s ease-in-out;
 }
@@ -765,13 +142,14 @@
     /* Cyan hover effect */
 }
 
-.skill-icon {
+/* Removed .skill-icon - Style Font Awesome classes directly */
+.fa-brands {
+    /* Style all Font Awesome brand icons */
     font-size: 2.5rem;
-    /* Slightly larger icon */
+    /*Icon Size*/
     color: #fff;
-    /* White icons */
+    /*Icon color*/
     margin-bottom: 0.3rem;
-    /* Less space between icon and text */
 }
 
 .skill-item p {
@@ -805,7 +183,8 @@
         height: 60px;
     }
 
-    .skill-icon {
+    .fa-brands {
+        /* Target Font Awesome icons in media query */
         font-size: 1.8rem;
     }
 
@@ -817,6 +196,169 @@
         font-size: 0.8rem;
     }
 }
- .skill-item i {
-    property-name: unset;
+
+/* ------------------------------------ */
+/*              Hero Section (Home)     */
+/* ------------------------------------ */
+
+.hero-section {
+    position: relative;
+    /* For positioning particle background absolutely */
+    overflow: hidden;
+    /* Clip particles within hero section */
+    padding: 12rem 0;
+    /* Increased padding for a larger hero area */
+    text-align: center;
+    color: #fff;
+    /* Default text color for hero section */
+}
+
+#particles-js {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #1a1a1a;
+    /* Fallback background color if particles don't load */
+    z-index: 0;
+    /* Place particles behind content */
+}
+
+.hero-content {
+    position: relative;
+    /* Ensure hero content is above particles */
+    z-index: 1;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-text {
+    text-align: center;
+    max-width: 600px;
+}
+
+.hero-title {
+    font-size: 4rem;
+    /* Larger, more impactful title */
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    /* Wider letter spacing for title */
+    margin-bottom: 0.5rem;
+    text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+    /* More pronounced text shadow */
+}
+
+/* Style for the typed-text span within the h1 */
+.typed-text {
+    color: #00ffff;
+    /* Cyan color for the typed text */
+}
+
+.hero-tagline {
+    font-size: 1.5rem;
+    /* Slightly larger tagline */
+    color: #eee;
+    /* Softer white for tagline */
+    font-weight: 400;
+    margin-bottom: 2.5rem;
+    /* More space below tagline */
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 1.3rem 3rem;
+    /* Slightly larger button */
+    background-color: #00ffff;
+    /* Cyan button color */
+    color: #222;
+    /* Dark text on button */
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 35px;
+    /* More rounded button */
+    transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    border: 2px solid transparent;
+    font-size: 1.1rem;
+    /* Slightly larger button text */
+}
+
+.cta-button:hover {
+    background-color: #00dddd;
+    /* Slightly darker cyan on hover */
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+    border-color: #fff;
+    /* White border on hover */
+}
+
+/* --- Media Queries (Responsive) for Hero Section --- */
+@media (max-width: 768px) {
+    .hero-section {
+        padding: 6rem 0;
+        /* Reduce padding on smaller screens */
+    }
+
+    .hero-content {
+        flex-direction: column;
+        /* Stack content vertically */
+        align-items: center;
+        /* Center content */
+        justify-content: center;
+        /* Center content vertically */
+        text-align: center;
+        /* Center-align text on smaller screens */
+    }
+
+    .hero-text {
+        text-align: center;
+        max-width: 600px;
+    }
+
+    .hero-title {
+        font-size: 2.5rem;
+        /* Smaller title font size */
+        letter-spacing: 0.1em;
+        /* Reduce letter spacing */
+    }
+
+    .hero-tagline {
+        font-size: 1.2rem;
+        /* Smaller tagline font size */
+    }
+
+    .cta-button {
+        padding: 1rem 2rem;
+        /* Smaller button padding */
+        font-size: 1rem;
+        /* Smaller button font size */
+    }
+
+    .social-icons {
+        position: static;
+        /* Remove absolute positioning */
+        text-align: center;
+        /* Center the social icons */
+        margin-top: 1rem;
+        /* Add some space above the icons */
+        padding-bottom: 23px;
+    }
+
+    .social-icons a {
+        margin: 0 10px;
+        /* Adjust horizontal spacing */
+    }
+}
+
+/* --- Larger Phones (Landscape) and Small Tablets (Landscape) --- */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .hero-title {
+        font-size: 3rem;
+        /* Slightly smaller title font size */
+    }
 }
