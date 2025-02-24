@@ -1,0 +1,481 @@
+/* style.css (Complete Futuristic & Artistic Website Styles) */
+
+/* ------------------------------------ */
+/*              Global Styles           */
+/* ------------------------------------ */
+
+/* Reset and Base Styles */
+body {
+    background-color: #1a1a1a;
+    /* Dark gray background */
+    color: #f0f0f0;
+    /* Light gray text */
+    font-family: 'Exo 2', sans-serif;
+    /* Google Font - Exo 2 */
+    margin: 0;
+    padding: 0;
+    line-height: 1.7;
+    overflow-x: hidden;
+    /* Prevent horizontal scroll if needed */
+    -webkit-font-smoothing: antialiased;
+    /* For smoother fonts on macOS/iOS */
+    -moz-osx-font-smoothing: grayscale;
+    /* For smoother fonts on Firefox macOS */
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    /* Ensure padding and border are included in element's total width and height */
+}
+
+/* Typography */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: 700;
+    margin-top: 0;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+    letter-spacing: 0.05em;
+}
+
+h2 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 2.5rem;
+    color: #f0f0f0;
+    /* Consistent heading color */
+    position: relative;
+    /* For potential underline effect */
+    padding-bottom: 0.5rem;
+    /* Space for underline */
+}
+
+h2::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    width: 50px;
+    /* Adjust underline width */
+    height: 3px;
+    background-color: #00ffff;
+    /* Accent color underline */
+    border-radius: 5px;
+}
+
+p {
+    margin-bottom: 1.5rem;
+    font-weight: 400;
+    color: #ccc;
+    /* Slightly softer text color for body paragraphs */
+}
+
+a {
+    color: #00ffff;
+    /* Default link color */
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+}
+
+a:hover {
+    color: #ffcc00;
+    /* Hover link color */
+}
+
+/* ------------------------------------ */
+/*              Header & Navigation      */
+/* ------------------------------------ */
+
+header {
+    background-color: rgba(0, 0, 0, 0.8);
+    /* Semi-transparent dark header */
+    padding: 1.5rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 1.5rem;
+    /* Increased margin between nav items */
+}
+
+nav ul li a {
+    color: #00ffff;
+    /* Cyan accent color */
+    text-decoration: none;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+    /* Added background-color transition */
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+}
+
+nav ul li a:hover {
+    color: #ffcc00;
+    /* Gold hover color */
+    background-color: rgba(255, 204, 0, 0.1);
+}
+
+nav ul li a.active {
+    /* You can add an "active" class to the current page's link in HTML */
+    color: #ffcc00;
+    /* Highlight active link */
+    font-weight: 600;
+}
+
+/* ------------------------------------ */
+/*              Hero Section (Home)     */
+/* ------------------------------------ */
+
+.hero-section {
+    background: linear-gradient(135deg, #2a008a, #00bcd4);
+    /* Gradient background */
+    padding: 10rem 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-content {
+    max-width: 900px;
+    /* Wider hero content area */
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    /* Larger heading */
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    margin-bottom: 0.5rem;
+    text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.2);
+    /* Subtle text shadow */
+}
+
+.hero-tagline {
+    font-size: 1.3rem;
+    color: #ccf2ff;
+    /* Lighter cyan shade for tagline */
+    font-weight: 400;
+    margin-bottom: 2rem;
+    /* More space below tagline */
+}
+
+/* ------------------------------------ */
+/*              Content Sections        */
+/* ------------------------------------ */
+
+.content-section {
+    padding: 5rem 0;
+    /* Increased padding for content sections */
+    max-width: 1200px;
+    /* Wider content area on other pages */
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+/* About Section */
+.about-content {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    /* Increased gap */
+}
+
+.profile-image {
+    width: 250px;
+    /* Larger profile image */
+    border-radius: 15px;
+    /* Slightly less rounded for a modern edge */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    /* Deeper shadow for profile image */
+    border: 3px solid rgba(0, 255, 255, 0.2);
+    /* Subtle border for profile image */
+}
+
+/* Projects Section */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    /* Larger project cards */
+    gap: 2.5rem;
+    /* Increased gap */
+}
+
+.project-card {
+    background-color: #222;
+    /* Darker project card background */
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+    /* Shadow for project cards */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    /* Slight lift on hover */
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.5);
+    /* Enhanced shadow on hover */
+}
+
+.project-card img {
+    width: 100%;
+    display: block;
+    transition: opacity 0.3s ease-in-out;
+    /* Image fade-in effect */
+}
+
+.project-card img:hover {
+    opacity: 0.9;
+    /* Slightly fade image on project card hover */
+}
+
+.project-card-content {
+    /* Container for text content inside project card */
+    padding: 1.5rem;
+}
+
+.project-card h3 {
+    margin-top: 0;
+    margin-bottom: 0.8rem;
+    font-size: 1.5rem;
+    color: #f0f0f0;
+}
+
+.project-card p {
+    margin-bottom: 1rem;
+    color: #bbb;
+    /* Softer project description text */
+}
+
+.project-card-tech {
+    /* Container for project technologies (optional, add in HTML if needed) */
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.project-card-tech span {
+    /* Style for individual tech tags */
+    background-color: rgba(0, 255, 255, 0.1);
+    /* Subtle tech tag background */
+    color: #00ffff;
+    padding: 0.3rem 0.6rem;
+    border-radius: 5px;
+    font-size: 0.85rem;
+}
+
+
+.project-card a.project-link {
+    /* Style for "View Project" links */
+    display: block;
+    background-color: #333;
+    /* Darker link background */
+    text-align: center;
+    text-decoration: none;
+    color: #f0f0f0;
+    padding: 1rem;
+    border-radius: 0 0 10px 10px;
+    /* Rounded bottom corners to match card */
+    transition: background-color 0.3s ease-in-out;
+}
+
+.project-card a.project-link:hover {
+    background-color: #444;
+    /* Slightly lighter on hover */
+}
+
+
+/* Skills Section */
+.skills-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    /* Center skills */
+    gap: 1.5rem;
+    /* Increased gap for skills */
+    padding: 2rem 0;
+    /* Add some padding around skills list */
+}
+
+.skills-list li {
+    background-color: #2a2a2a;
+    /* Darker skill background */
+    padding: 1rem 1.5rem;
+    /* Increased padding for skills */
+    border-radius: 8px;
+    font-size: 1.1rem;
+    color: #ddd;
+    /* Slightly lighter skill text */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    /* Shadow for skills */
+    transition: transform 0.2s ease-in-out;
+}
+
+.skills-list li:hover {
+    transform: scale(1.05);
+    /* Slight scale on hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    /* Enhanced shadow on hover */
+}
+
+
+/* Contact Section */
+.contact-form {
+    max-width: 600px;
+    /* Wider contact form */
+    margin: 0 auto;
+    padding: 2rem;
+    background-color: #222;
+    /* Darker form background */
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+    /* Shadow for contact form */
+}
+
+.contact-form form {
+    display: grid;
+    grid-gap: 1.5rem;
+    /* Increased gap in form */
+}
+
+.contact-form input,
+.contact-form textarea {
+    padding: 1rem;
+    border: none;
+    border-radius: 5px;
+    background-color: #333;
+    /* Darker input background */
+    color: #f0f0f0;
+    /* Light input text */
+    font-family: inherit;
+    /* Inherit font from body */
+    font-size: 1rem;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+    color: #777;
+    /* Placeholder text color */
+}
+
+.contact-form button {
+    padding: 1rem 2rem;
+    background-color: #00ffff;
+    /* Accent color button */
+    color: #333;
+    /* Dark button text */
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    /* Button shadow */
+}
+
+.contact-form button:hover {
+    background-color: #00dddd;
+    /* Slightly darker accent on hover */
+    transform: scale(1.02);
+    /* Slight scale on hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    /* Enhanced shadow on hover */
+}
+
+.contact-info {
+    text-align: center;
+    margin-top: 3rem;
+    /* Increased margin */
+}
+
+.contact-info p {
+    margin-bottom: 0.8rem;
+    font-size: 1.1rem;
+}
+
+.contact-info a {
+    font-weight: 500;
+}
+
+
+/* ------------------------------------ */
+/*              Footer                 */
+/* ------------------------------------ */
+
+footer {
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #aaa;
+    text-align: center;
+    padding: 1.5rem 0;
+    /* Increased footer padding */
+    font-size: 0.9rem;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: 99;
+    /* Ensure footer is below header if both are fixed/sticky */
+}
+
+
+/* ------------------------------------ */
+/*              Utility Classes         */
+/* ------------------------------------ */
+
+.container {
+    /* Example container class if you need more control over page width */
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+/* Example of a visually distinct CTA Button (you can use this instead of .cta-button if needed) */
+.cta-button-primary {
+    display: inline-block;
+    padding: 1.3rem 3rem;
+    /* Even larger button */
+    background-color: #ffcc00;
+    /* Gold button color */
+    color: #1a1a1a;
+    /* Dark text on button */
+    text-decoration: none;
+    font-weight: 700;
+    /* Bolder button text */
+    border-radius: 40px;
+    /* More rounded button */
+    transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    border: none;
+    font-size: 1.2rem;
+    /* Larger button text */
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    /* Uppercase text for emphasis */
+}
+
+.cta-button-primary:hover {
+    background-color: #ffe066;
+    /* Slightly lighter gold on hover */
+    transform: scale(1.03);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+}
