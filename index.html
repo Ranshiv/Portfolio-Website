@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Name - Portfolio</title>
+    <link rel="stylesheet" href="styles.css"> </head>
+<body>
+
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="hero" class="hero-section">
+        <div class="hero-content">
+            <h1>[Your Name]</h1>
+            <p class="hero-tagline">[Your Professional Title/Tagline]</p>
+            <a href="#projects" class="cta-button">View My Projects</a>
+        </div>
+    </section>
+
+    <section id="about" class="content-section">
+        <h2>About Me</h2>
+        <div class="about-content">
+            <img src="placeholder-profile.jpg" alt="Your Profile Picture" class="profile-image">
+            <p>[Your brief About Me story and summary]</p>
+        </div>
+    </section>
+
+    <section id="projects" class="content-section">
+        <h2>Projects</h2>
+        <div class="projects-grid">
+            <!-- Project 1 -->
+            <div class="project-card">
+                <h3>Project Title 1</h3>
+                <p>Brief project description 1.</p>
+                <img src="placeholder-project1.jpg" alt="Project 1 Image">
+                <a href="#">View Project</a>
+            </div>
+            <!-- Project 2 -->
+            <div class="project-card">
+                <h3>Project Title 2</h3>
+                <p>Brief project description 2.</p>
+                <img src="placeholder-project2.jpg" alt="Project 2 Image">
+                <a href="#">View Project</a>
+            </div>
+            <!-- Add more project cards here -->
+        </div>
+    </section>
+
+    <section id="skills" class="content-section">
+        <h2>Skills</h2>
+        <div class="skills-list">
+            <ul>
+                <li>Programming Language 1</li>
+                <li>Framework/Library 1</li>
+                <li>Tool 1</li>
+                <!-- Add more skills -->
+            </ul>
+        </div>
+    </section>
+
+    <section id="contact" class="content-section">
+        <h2>Contact</h2>
+        <div class="contact-form">
+            <form action="#" method="post"> <!-- Replace # with your form submission handler -->
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+        <div class="contact-info">
+            <p>Email: <a href="mailto:your-email@example.com">your-email@example.com</a></p>
+            <!-- Add social media links here -->
+        </div>
+    </section>
+
+    <footer>
+        <p>© [Year] [Your Name]</p>
+    </footer>
+
+</body>
+</html>
