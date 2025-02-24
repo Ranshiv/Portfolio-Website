@@ -1,93 +1,298 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Your Name - Home</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;700&family=Rajdhani:wght@400;600;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;700&family=Rajdhani:wght@400;600;700&family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
     <!-- Correct Font Awesome Link (Only One - Version 6.5.1) -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="styles_home.css">
-</head>
-<body>
-
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="styles_home.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=terminal"
+    />
+  </head>
+  <body>
     <header>
-        <nav>
-            <ul>
-                <li><a href="index.html" class="active">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="projects.html">Projects</a></li>
-                <li><a href="skills.html">Skills</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
-        <div class="social-icons">
-            <a href="[LinkedIn Link]" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-linkedin"></i></a>
-            <a href="[GitHub Link]" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i></a>
-        </div>
+      <nav>
+        <ul>
+          <li><a href="index.html" class="active">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="skills.html">Skills</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="social-icons">
+        <a href="[LinkedIn Link]" target="_blank" rel="noopener noreferrer"
+          ><i class="fa-brands fa-linkedin"></i
+        ></a>
+        <a href="[GitHub Link]" target="_blank" rel="noopener noreferrer"
+          ><i class="fa-brands fa-github"></i
+        ></a>
+      </div>
     </header>
 
     <section id="hero" class="hero-section">
-        <div id="particles-js"></div>
-        <div class="hero-content">
-            <div class="hero-text">
-                <h1 class="hero-title"><span class="typed-text"></span></h1>
-                <p class="hero-tagline">Bringing Vision to Life Through Code</p>
-                <a href="projects.html" class="cta-button">Explore My Work</a>
-            </div>
+      <div id="particles-js"></div>
+      <div class="hero-content">
+        <div class="hero-text">
+          <h1 class="hero-title"><span class="typed-text"></span></h1>
+          <p class="hero-tagline">Bringing Vision to Life Through Code</p>
+          <a href="projects.html" class="cta-button">Explore My Work</a>
         </div>
+      </div>
     </section>
 
     <section id="skills" class="skills-section">
-        <div class="container">
-            <h2>Technical Skills</h2>
-            <div class="skills-grid">
-
-                <!-- Programming Languages Card -->
-                <div class="skills-card">
-                    <h3>Programming Languages</h3>
-                    <div class="skills-card-content">
-                        <div class="skill-item"><i class="fa-brands fa-html5"></i><p>HTML</p></div>
-                        <div class="skill-item"><i class="fa-brands fa-css3-alt"></i><p>CSS</p></div>
-                        <div class="skill-item"><i class="fa-brands fa-js"></i><p>JavaScript</p></div>
-                        <div class="skill-item"><i class="fa-brands fa-python"></i><p>Python</p></div>
-                    </div>
-                </div>
-
-                <!-- Operating Systems Card -->
-                <div class="skills-card">
-                    <h3>Operating Systems</h3>
-                    <div class="skills-card-content">
-                        <div class="skill-item"><i class="fa-brands fa-windows"></i><p>Windows</p></div>
-                        <div class="skill-item"><i class="fa-brands fa-apple"></i><p>macOS</p></div>
-                        <div class="skill-item"><i class="fa-brands fa-linux"></i><p>Linux</p></div>
-                    </div>
-                </div>
-
-                <!-- Tools Card -->
-                <div class="skills-card">
-                    <h3>Tools</h3>
-                    <div class="skills-card-content">
-                        <div class="skill-item"><i class="fa-brands fa-git"></i><p>Git</p></div>
-                        <div class="skill-item"><i class="fa-brands fa-github"></i><p>GitHub</p></div>
-                        <div class="skill-item"><i class="fa-brands fa-react"></i> <p>React</p></div>
-                        <div class="skill-item"><i class="fa-brands fa-node-js"></i> <p>Node.js</p></div>
-                    </div>
-                </div>
+      <div class="container">
+        <h2>Technical Skills</h2>
+        <div class="skills-grid">
+          <!-- Programming Languages Card -->
+          <div class="skills-card">
+            <h3>Programming Languages</h3>
+            <div class="skills-card-content">
+              <div class="skill-item">
+                <i class="fa-brands fa-js"></i>
+                <p>Front-end</p>
+              </div>
+              <!-- <div class="skill-item"><i class="fa-brands fa-js"></i><p>JavaScript</p></div> -->
+              <div class="skill-item">
+                <i class="fa-brands fa-python"></i>
+                <p>Python</p>
+              </div>
+              <div class="skill-item">
+                <i class="fa-brands fa-java"></i>
+                <p>Java</p>
+              </div>
+              <div class="skill-item">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  height="32"
+                  width="28"
+                  viewBox="0 0 448 512"
+                >
+                  <!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
+                  <path
+                    fill="#ffffff"
+                    d="M448 80l0 48c0 44.2-100.3 80-224 80S0 172.2 0 128L0 80C0 35.8 100.3 0 224 0S448 35.8 448 80zM393.2 214.7c20.8-7.4 39.9-16.9 54.8-28.6L448 288c0 44.2-100.3 80-224 80S0 332.2 0 288L0 186.1c14.9 11.8 34 21.2 54.8 28.6C99.7 230.7 159.5 240 224 240s124.3-9.3 169.2-25.3zM0 346.1c14.9 11.8 34 21.2 54.8 28.6C99.7 390.7 159.5 400 224 400s124.3-9.3 169.2-25.3c20.8-7.4 39.9-16.9 54.8-28.6l0 85.9c0 44.2-100.3 80-224 80S0 476.2 0 432l0-85.9z"
+                  />
+                </svg>
+                <p>Scala</p>
+              </div>
             </div>
+          </div>
+
+          <!-- Operating Systems Card -->
+          <div class="skills-card">
+            <h3>Operating Systems</h3>
+            <div class="skills-card-content">
+              <div class="skill-item">
+                <i class="fa-brands fa-windows"></i>
+                <p>Windows</p>
+              </div>
+              <div class="skill-item">
+                <i class="fa-brands fa-linux"></i>
+                <p>Linux</p>
+              </div>
+              <div class="skill-item">
+                <i class="fa-brands fa-ubuntu"></i>
+                <p>Ubuntu</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tools Card -->
+          <div class="skills-card">
+            <h3>Tools</h3>
+            <div class="skills-card-content">
+              <div class="skill-item">
+                <i class="fa-brands fa-git"></i>
+                <p>Git</p>
+              </div>
+              <div class="skill-item">
+                <i class="fa-brands fa-github"></i>
+                <p>GitHub</p>
+              </div>
+              <div class="skill-item">
+                <i class="fa-brands fa-react"></i>
+                <p>Bash</p>
+              </div>
+              <div class="skill-item">
+                <i class="fa-brands fa-node-js"></i>
+                <p>Node.js</p>
+              </div>
+              <div class="skill-item">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  height="24"
+                  width="24"
+                  viewBox="0 0 512 512"
+                >
+                  <!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
+                  <path
+                    fill="#ffffff"
+                    d="M428.3 3c11.6-6.4 26.2-2.3 32.6 9.3l4.8 8.7c19.3 34.7 19.8 75.7 3.4 110C495.8 159.6 512 197.9 512 240c0 18.5-3.1 36.3-8.9 52.8c-6.1 17.3-28.5 16.3-36.8-.1l-11.7-23.4c-4.1-8.1-12.4-13.3-21.5-13.3L360 256c-13.3 0-24-10.7-24-24l0-80c0-13.3-10.7-24-24-24l-17.1 0c-21.3 0-30-23.9-10.8-32.9C304.7 85.4 327.7 80 352 80c28.3 0 54.8 7.3 77.8 20.2c5.5-18.2 3.7-38.4-6-55.8L419 35.7c-6.4-11.6-2.3-26.2 9.3-32.6zM171.2 345.5L264 160l40 0 0 80c0 26.5 21.5 48 48 48l76.2 0 23.9 47.8C372.3 443.9 244.3 512 103.2 512l-58.8 0C19.9 512 0 492.1 0 467.6c0-20.8 14.5-38.8 34.8-43.3l49.8-11.1c37.6-8.4 69.5-33.2 86.7-67.7z"
+                  />
+                </svg>
+                <p>Flask</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="skills-card">
+            <h3>Shell Scripting</h3>
+            <div class="skills-card-content">
+              <div class="skill-item">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  height="24"
+                  width="27"
+                  viewBox="0 0 576 512"
+                >
+                  <!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
+                  <path
+                    fill="#ffffff"
+                    d="M9.4 86.6C-3.1 74.1-3.1 53.9 9.4 41.4s32.8-12.5 45.3 0l192 192c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L178.7 256 9.4 86.6zM256 416l288 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-288 0c-17.7 0-32-14.3-32-32s14.3-32 32-32z"
+                  />
+                </svg>
+                <p>Cmd</p>
+              </div>
+              <div class="skill-item">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  height="24"
+                  width="15"
+                  viewBox="0 0 320 512"
+                >
+                  <!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
+                  <path
+                    fill="#ffffff"
+                    d="M160 0c17.7 0 32 14.3 32 32l0 35.7c1.6 .2 3.1 .4 4.7 .7c.4 .1 .7 .1 1.1 .2l48 8.8c17.4 3.2 28.9 19.9 25.7 37.2s-19.9 28.9-37.2 25.7l-47.5-8.7c-31.3-4.6-58.9-1.5-78.3 6.2s-27.2 18.3-29 28.1c-2 10.7-.5 16.7 1.2 20.4c1.8 3.9 5.5 8.3 12.8 13.2c16.3 10.7 41.3 17.7 73.7 26.3l2.9 .8c28.6 7.6 63.6 16.8 89.6 33.8c14.2 9.3 27.6 21.9 35.9 39.5c8.5 17.9 10.3 37.9 6.4 59.2c-6.9 38-33.1 63.4-65.6 76.7c-13.7 5.6-28.6 9.2-44.4 11l0 33.4c0 17.7-14.3 32-32 32s-32-14.3-32-32l0-34.9c-.4-.1-.9-.1-1.3-.2l-.2 0s0 0 0 0c-24.4-3.8-64.5-14.3-91.5-26.3c-16.1-7.2-23.4-26.1-16.2-42.2s26.1-23.4 42.2-16.2c20.9 9.3 55.3 18.5 75.2 21.6c31.9 4.7 58.2 2 76-5.3c16.9-6.9 24.6-16.9 26.8-28.9c1.9-10.6 .4-16.7-1.3-20.4c-1.9-4-5.6-8.4-13-13.3c-16.4-10.7-41.5-17.7-74-26.3l-2.8-.7s0 0 0 0C119.4 279.3 84.4 270 58.4 253c-14.2-9.3-27.5-22-35.8-39.6c-8.4-17.9-10.1-37.9-6.1-59.2C23.7 116 52.3 91.2 84.8 78.3c13.3-5.3 27.9-8.9 43.2-11L128 32c0-17.7 14.3-32 32-32z"
+                  />
+                </svg>
+                <p>Powershell</p>
+              </div>
+              <div class="skill-item">
+                <span class="material-symbols-outlined"> terminal </span>
+                <p>Bash</p>
+              </div>
+              <div class="skill-item">
+                <i class="fa-brands fa-node-js"></i>
+                <p>Node.js</p>
+              </div>
+            </div>
+          </div>
+          <div class="skills-card">
+            <h3>Cybersecurity</h3>
+            <div class="skills-card-content">
+              <div class="skill-item">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  height="24"
+                  width="27"
+                  viewBox="0 0 576 512"
+                >
+                  <!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
+                  <path
+                    fill="#ffffff"
+                    d="M9.4 86.6C-3.1 74.1-3.1 53.9 9.4 41.4s32.8-12.5 45.3 0l192 192c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L178.7 256 9.4 86.6zM256 416l288 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-288 0c-17.7 0-32-14.3-32-32s14.3-32 32-32z"
+                  />
+                </svg>
+                <p>Cmd</p>
+              </div>
+              <div class="skill-item">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  height="24"
+                  width="15"
+                  viewBox="0 0 320 512"
+                >
+                  <!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
+                  <path
+                    fill="#ffffff"
+                    d="M160 0c17.7 0 32 14.3 32 32l0 35.7c1.6 .2 3.1 .4 4.7 .7c.4 .1 .7 .1 1.1 .2l48 8.8c17.4 3.2 28.9 19.9 25.7 37.2s-19.9 28.9-37.2 25.7l-47.5-8.7c-31.3-4.6-58.9-1.5-78.3 6.2s-27.2 18.3-29 28.1c-2 10.7-.5 16.7 1.2 20.4c1.8 3.9 5.5 8.3 12.8 13.2c16.3 10.7 41.3 17.7 73.7 26.3l2.9 .8c28.6 7.6 63.6 16.8 89.6 33.8c14.2 9.3 27.6 21.9 35.9 39.5c8.5 17.9 10.3 37.9 6.4 59.2c-6.9 38-33.1 63.4-65.6 76.7c-13.7 5.6-28.6 9.2-44.4 11l0 33.4c0 17.7-14.3 32-32 32s-32-14.3-32-32l0-34.9c-.4-.1-.9-.1-1.3-.2l-.2 0s0 0 0 0c-24.4-3.8-64.5-14.3-91.5-26.3c-16.1-7.2-23.4-26.1-16.2-42.2s26.1-23.4 42.2-16.2c20.9 9.3 55.3 18.5 75.2 21.6c31.9 4.7 58.2 2 76-5.3c16.9-6.9 24.6-16.9 26.8-28.9c1.9-10.6 .4-16.7-1.3-20.4c-1.9-4-5.6-8.4-13-13.3c-16.4-10.7-41.5-17.7-74-26.3l-2.8-.7s0 0 0 0C119.4 279.3 84.4 270 58.4 253c-14.2-9.3-27.5-22-35.8-39.6c-8.4-17.9-10.1-37.9-6.1-59.2C23.7 116 52.3 91.2 84.8 78.3c13.3-5.3 27.9-8.9 43.2-11L128 32c0-17.7 14.3-32 32-32z"
+                  />
+                </svg>
+                <p>Powershell</p>
+              </div>
+              <div class="skill-item">
+                <span class="material-symbols-outlined"> terminal </span>
+                <p>Bash</p>
+              </div>
+              <div class="skill-item">
+                <i class="fa-brands fa-node-js"></i>
+                <p>Node.js</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="skills-card">
+            <h3>Others</h3>
+            <div class="skills-card-content">
+              <div class="skill-item">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  height="24"
+                  width="27"
+                  viewBox="0 0 576 512"
+                >
+                  <!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
+                  <path
+                    fill="#ffffff"
+                    d="M9.4 86.6C-3.1 74.1-3.1 53.9 9.4 41.4s32.8-12.5 45.3 0l192 192c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L178.7 256 9.4 86.6zM256 416l288 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-288 0c-17.7 0-32-14.3-32-32s14.3-32 32-32z"
+                  />
+                </svg>
+                <p>Cmd</p>
+              </div>
+              <div class="skill-item">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  height="24"
+                  width="15"
+                  viewBox="0 0 320 512"
+                >
+                  <!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
+                  <path
+                    fill="#ffffff"
+                    d="M160 0c17.7 0 32 14.3 32 32l0 35.7c1.6 .2 3.1 .4 4.7 .7c.4 .1 .7 .1 1.1 .2l48 8.8c17.4 3.2 28.9 19.9 25.7 37.2s-19.9 28.9-37.2 25.7l-47.5-8.7c-31.3-4.6-58.9-1.5-78.3 6.2s-27.2 18.3-29 28.1c-2 10.7-.5 16.7 1.2 20.4c1.8 3.9 5.5 8.3 12.8 13.2c16.3 10.7 41.3 17.7 73.7 26.3l2.9 .8c28.6 7.6 63.6 16.8 89.6 33.8c14.2 9.3 27.6 21.9 35.9 39.5c8.5 17.9 10.3 37.9 6.4 59.2c-6.9 38-33.1 63.4-65.6 76.7c-13.7 5.6-28.6 9.2-44.4 11l0 33.4c0 17.7-14.3 32-32 32s-32-14.3-32-32l0-34.9c-.4-.1-.9-.1-1.3-.2l-.2 0s0 0 0 0c-24.4-3.8-64.5-14.3-91.5-26.3c-16.1-7.2-23.4-26.1-16.2-42.2s26.1-23.4 42.2-16.2c20.9 9.3 55.3 18.5 75.2 21.6c31.9 4.7 58.2 2 76-5.3c16.9-6.9 24.6-16.9 26.8-28.9c1.9-10.6 .4-16.7-1.3-20.4c-1.9-4-5.6-8.4-13-13.3c-16.4-10.7-41.5-17.7-74-26.3l-2.8-.7s0 0 0 0C119.4 279.3 84.4 270 58.4 253c-14.2-9.3-27.5-22-35.8-39.6c-8.4-17.9-10.1-37.9-6.1-59.2C23.7 116 52.3 91.2 84.8 78.3c13.3-5.3 27.9-8.9 43.2-11L128 32c0-17.7 14.3-32 32-32z"
+                  />
+                </svg>
+                <p>Powershell</p>
+              </div>
+              <div class="skill-item">
+                <span class="material-symbols-outlined"> terminal </span>
+                <p>Bash</p>
+              </div>
+              <div class="skill-item">
+                <i class="fa-brands fa-node-js"></i>
+                <p>Node.js</p>
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
     </section>
 
     <footer>
-        <p>© 2025 [Your Name]</p> <!--- Put your name here -->
+      <p>© 2025 Ranshiv Kumar</p>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
     <script src="script_home.js"></script>
-
-</body>
+  </body>
 </html>
