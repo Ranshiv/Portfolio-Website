@@ -1,0 +1,139 @@
+/* styles_about.css - About Page Specific Styles (Creative Enhancements) */
+
+/* ------------------------------------ */
+/*              About Section           */
+/* ------------------------------------ */
+
+.about-section {
+    padding: 8rem 0;
+    /* More padding */
+    background-color: #111;
+    /* Darker background */
+    position: relative;
+    /* For potential background effects */
+    overflow: hidden;
+    /* Clip any overflowing effects */
+}
+
+/* Subtle Scanline Overlay (Optional - Comment out if you don't like it) */
+.about-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: repeating-linear-gradient(transparent,
+            rgba(255, 255, 255, 0.05) 1px,
+            transparent 3px);
+    opacity: 0.3;
+    /* Adjust opacity as needed */
+    pointer-events: none;
+    /* Prevent interference with clicks */
+    z-index: 0;
+    /* Place behind content */
+}
+
+.about-section h2 {
+    color: #00ffff;
+    margin-bottom: 4rem;
+    font-size: 2.8rem;
+    /* Larger heading */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    z-index: 1;
+    /* Ensure heading is above the overlay */
+    position: relative;
+}
+
+.about-content {
+    display: flex;
+    gap: 4rem;
+    align-items: flex-start;
+    position: relative;
+    /* For positioning within the section */
+    z-index: 1;
+    /* Ensure content is above the overlay */
+}
+
+.about-image {
+    flex: 0 0 350px;
+    /* Larger image container */
+}
+
+.about-image img {
+    width: 100%;
+    border-radius: 20px;
+    /* More rounded corners */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6),
+        /* Stronger shadow */
+        0 0 0 3px rgba(0, 255, 255, 0.3);
+    /* Cyan outline */
+    display: block;
+    transition: transform 0.3s ease-in-out;
+    /* Add a subtle hover effect */
+}
+
+.about-image img:hover {
+    transform: scale(1.05);
+    /* Slightly enlarge image on hover */
+}
+
+.about-text {
+    flex: 1;
+    text-align: left;
+}
+
+.about-text p {
+    margin-bottom: 1.5rem;
+    color: #ddd;
+    /* Lighter text color */
+    line-height: 1.7;
+    /* Increased line height */
+    font-size: 1.1rem;
+    /* Slightly larger font size */
+}
+
+.download-resume-button {
+    display: inline-block;
+    padding: 1.2rem 2.8rem;
+    background-color: #00ffff;
+    color: #222;
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 35px;
+    transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    border: none;
+    margin-top: 1.5rem;
+    font-size: 1.1rem;
+}
+
+.download-resume-button:hover {
+    background-color: #00dddd;
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+}
+
+/* --- Media Queries (Responsive) --- */
+
+@media (max-width: 768px) {
+    .about-content {
+        flex-direction: column;
+    }
+
+    .about-image {
+        flex: 0 0 auto;
+        margin-bottom: 2rem;
+        text-align: center;
+        /* Center the image */
+    }
+
+    .about-section {
+        padding: 5rem 0;
+        /* Adjust padding */
+    }
+
+    .download-resume-button {
+        font-size: 1rem;
+    }
+}
