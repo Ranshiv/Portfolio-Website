@@ -61,31 +61,71 @@
 }
 
 /* --- Notification Styles --- */
+/* styles_contact.css - Contact Page Specific Styles (with Notification) */
+
+/* ... (Keep all previous styles for .contact-section, .contact-form, etc.) ... */
+
+/* --- Notification Styles --- */
 #form-result {
     position: fixed;
-    top: 20px;        /* Back to a reasonable top value */
+    top: 20px;
     right: 20px;
-    background-color: rgba(0, 255, 255, 0.95);
-    color: #111;      /* Default text color */
-    padding: 1rem 2rem;
-    border-radius: 5px;
+    padding: 1rem 1.5rem;
+    /*Adjusted padding*/
+    border-radius: 8px;
+    /* Rounded corners */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
     z-index: 1000;
     display: none;
+    /* Initially hidden */
     max-width: 300px;
-    transition: opacity 0.5s ease-in-out; /* Smooth fade-out */
+    color: #fff;
+    /* Default text color */
+    font-weight: 500;
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+    /* Smooth transitions */
+    transform: translateX(100%);
+    /* Start off-screen to the right */
+    opacity: 0;
+    /* Start hidden*/
+    
 }
 
 #form-result.success {
     display: block;
-    background-color: rgba(0, 255, 0, 0.9); /* Green for success */
-    color: #fff; /* White text on green */
+    background-color: rgba(0, 255, 128, 0.8);
+    /*Semi-transparent green*/
+    border: 2px solid #00c8cf;
+    /* Bright green border */
+    color: black;
+    animation: slideIn 0.5s forwards;
+    /* Slide-in animation */
+    margin-top: 2%;
 }
 
 #form-result.error {
     display: block;
-    background-color: rgba(255, 0, 0, 0.9); /* Red for error */
-    color: #fff;  /* White text on red */
+    background-color: rgba(255, 0, 0, 0.8);
+    /* Semi-transparent red */
+    border: 2px solid #ff4d4d;
+    /* Bright red border */
+    animation: slideIn 0.5s forwards;
+    /* Slide-in animation */
+}
+
+/* Keyframes for slide-in animation */
+@keyframes slideIn {
+    from {
+        transform: translateX(100%);
+        /* Start off-screen */
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0);
+        /* End at normal position */
+        opacity: 1;
+    }
 }
 
 /* --- Media Queries (Responsive) --- */
@@ -93,15 +133,22 @@
 @media (max-width: 768px) {
     .contact-form {
         padding: 1.5rem;
+        /* Reduce padding on smaller screens */
     }
 
-    .contact-section{
+    .contact-section {
         padding: 4rem 0;
     }
+
+    /* Adjust notification position for smaller screens */
     #form-result {
-        top: 10px;        /* Smaller top value on mobile */
-        right: 10px;      /* Smaller right value */
-        left: 10px;       /* Add left value for centering */
-        max-width: calc(100% - 20px); /* Prevent overflow */
+        top: 10px;
+        /* Reduce top distance */
+        right: 10px;
+        /* Reduce right distance */
+        left: 10px;
+        /* Add left distance */
+        max-width: calc(100% - 20px);
+        /* Prevent overflow */
     }
 }
