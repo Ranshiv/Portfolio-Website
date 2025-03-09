@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const formData = new FormData(form);
 
         try {
-            const response = await fetch(form.action, {
+            const response = await fetch("https://formspree.io/f/YOUR_FORMSPREE_ENDPOINT", { //Replace with your form endpoint
                 method: 'POST',
                 body: formData,
                 headers: {
@@ -24,11 +24,10 @@ document.addEventListener('DOMContentLoaded', function () {
                 setTimeout(() => {
                     formResult.classList.remove('success');
                     formResult.innerHTML = '';
-                    window.location.href = "/"; // Redirect to home page
+                    window.location.href = "/"; //Corrected redirect
                 }, 5000);
 
             } else {
-                // Error handling: Display error, but DO NOT redirect
                 const data = await response.json();
                 formResult.classList.add('error');
                 if (Object.hasOwn(data, 'errors')) {
@@ -37,15 +36,11 @@ document.addEventListener('DOMContentLoaded', function () {
                 } else {
                     formResult.innerHTML = "<p>Oops! There was a problem submitting your form.</p>";
                 }
-                //NO SETTIMEOUT HERE
             }
-
         } catch (error) {
-            // Network error handling: Display error, DO NOT redirect
             formResult.classList.add('error');
             formResult.innerHTML = "<p>Oops! There was a network error. Please try again.</p>";
             console.error("Network error:", error);
-            //NO SETTIMEOUT HERE
         }
     });
 });
