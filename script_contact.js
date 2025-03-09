@@ -1,34 +1,60 @@
-document.addEventListener("DOMContentLoaded", function () {
-    console.log("✅ JavaScript Loaded - Form Handling Active");
+document.addEventListener('DOMContentLoaded', function () {
+    const form = document.getElementById('contact-form');
+    const formResult = document.getElementById('form-result');
 
-    const form = document.getElementById("contact-form");
-    if (!form) {
-        console.error("❌ Form not found! Check your HTML.");
-        return;
-    }
-
-    form.addEventListener("submit", function (event) {
-        event.preventDefault(); // 🚨 Prevents default form action
-        console.log("🚀 Form submitted - Handling via JavaScript");
+    form.addEventListener('submit', function (event) {
+        event.preventDefault();
 
         const formData = new FormData(form);
 
-        fetch("https://formspree.io/f/xqapznnb", { // ✅ Send to Formspree
-            method: "POST",
+        fetch(form.action, {
+            method: 'POST',
             body: formData,
-            headers: { "Accept": "application/json" }
+            headers: {
+                'Accept': 'application/json'
+            }
         })
             .then(response => {
-                console.log("✅ Response received:", response);
                 if (response.ok) {
-                    alert("🎉 Message sent successfully! Redirecting...");
-                    setTimeout(() => window.location.href = "index.html", 5000);
+                    // Success!
+                    formResult.innerHTML = "<p>Thanks for your submission!</p>";
+                    formResult.classList.add('success'); // Add success class
+                    form.reset();
+
+                    // Set a timeout to hide the notification and redirect
+                    setTimeout(() => {
+                        formResult.classList.remove('success'); // Remove success class
+                        formResult.innerHTML = ''; //Remove the content;
+                        window.location.href = "index.html"; // Redirect to home page
+                    }, 5000); // 5000 milliseconds = 5 seconds
                 } else {
-                    console.error("❌ Form submission error", response);
+                    // Error - get JSON response and display error message
+
+                    response.json().then(data => {
+                        formResult.classList.add('error'); // Add error class.
+                        if (Object.hasOwn(data, 'errors')) {
+                            formResult.innerHTML = "<p>Oops! There was a problem: " +
+                                data["errors"].map(error => error["message"]).join(", ") + "</p>";
+                        }
+                        else {
+                            formResult.innerHTML = "<p>Oops!  There was a problem submitting your form.</p>";
+                        }
+                        setTimeout(() => {
+                            formResult.classList.remove('error'); // Remove error class
+                            formResult.innerHTML = ''; //Remove the content;
+                            // window.location.href = "index.html"; // Redirect to home page
+                        }, 5000); // 5000 milliseconds = 5 seconds
+                    })
                 }
             })
             .catch(error => {
-                console.error("❌ Fetch error:", error);
+                formResult.classList.add('error'); // Add error class.
+                formResult.innerHTML = "<p>Oops! There was a network error. Please try again.</p>";
+                setTimeout(() => {
+                    formResult.classList.remove('error'); // Remove error class
+                    formResult.innerHTML = ''; //Remove the content;
+                    // window.location.href = "index.html"; // Redirect to home page
+                }, 5000); // 5000 milliseconds = 5 seconds
             });
     });
 });
