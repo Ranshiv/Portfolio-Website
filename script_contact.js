@@ -1,50 +1,34 @@
-console.log("Script Loaded!"); 
+document.addEventListener("DOMContentLoaded", function () {
+    console.log("✅ JavaScript Loaded - Form Handling Active");
 
-document.addEventListener('DOMContentLoaded', function () {
-    console.log("JavaScript Loaded - Form Handling Active");
-
-    const form = document.getElementById('contact-form');
-    const formResult = document.getElementById('form-result');
-
+    const form = document.getElementById("contact-form");
     if (!form) {
-        console.error("Form not found!");
+        console.error("❌ Form not found! Check your HTML.");
         return;
     }
 
-    form.addEventListener('submit', function (event) {
-        event.preventDefault(); // Prevent default form submission
-        console.log("Form Submitted - Handling with Fetch");
+    form.addEventListener("submit", function (event) {
+        event.preventDefault(); // 🚨 Prevents default form action
+        console.log("🚀 Form submitted - Handling via JavaScript");
 
         const formData = new FormData(form);
 
-        fetch("https://formspree.io/f/xqapznnb", { // Correct Formspree URL
-            method: 'POST',
+        fetch("https://formspree.io/f/xqapznnb", { // ✅ Send to Formspree
+            method: "POST",
             body: formData,
-            headers: { 'Accept': 'application/json' }
+            headers: { "Accept": "application/json" }
         })
             .then(response => {
-                console.log("Response received", response);
+                console.log("✅ Response received:", response);
                 if (response.ok) {
-                    formResult.innerHTML = "<p>Thanks for your submission!</p>";
-                    formResult.classList.add('success');
-                    form.reset();
-
-                    // Redirect after 5 seconds
-                    setTimeout(() => {
-                        window.location.href = "index.html";
-                    }, 5000);
+                    alert("🎉 Message sent successfully! Redirecting...");
+                    setTimeout(() => window.location.href = "index.html", 5000);
                 } else {
-                    return response.json().then(data => {
-                        console.error("Error submitting form", data);
-                        formResult.classList.add('error');
-                        formResult.innerHTML = "<p>Oops! There was a problem submitting your form.</p>";
-                    });
+                    console.error("❌ Form submission error", response);
                 }
             })
             .catch(error => {
-                console.error("Fetch error", error);
-                formResult.classList.add('error');
-                formResult.innerHTML = "<p>Oops! There was a network error. Please try again.</p>";
+                console.error("❌ Fetch error:", error);
             });
     });
 });
