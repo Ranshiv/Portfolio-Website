@@ -1,11 +1,6 @@
 {
     "trailingSlash": true,
     "redirects": [
-        
-        {
-            "source": "/home",
-            "destination": "/index.html"
-        },
         {
             "source": "/about",
             "destination": "/about.html"
@@ -13,6 +8,10 @@
         {
             "source": "/projects",
             "destination": "/projects.html"
+        },
+        {
+            "source": "/skills",
+            "destination": "/skills.html"
         },
         {
             "source": "/contact",
