@@ -1,16 +1,13 @@
-/* style.css (Complete Futuristic & Artistic Website Styles - Corrected & Centered Nav) */
+/* style.css (Complete - with Logo Placeholder and Centered Nav) */
 
 /* ------------------------------------ */
 /*              Global Styles           */
 /* ------------------------------------ */
 
-/* Reset and Base Styles */
 body {
     background-color: #111;
-    /* Darker overall background */
     color: #f0f0f0;
     font-family: 'Roboto', sans-serif;
-    /* Default font - use Roboto for body */
     margin: 0;
     padding: 0;
     line-height: 1.7;
@@ -19,21 +16,13 @@ body {
     -moz-osx-font-smoothing: grayscale;
 }
 
-*,
-*::before,
-*::after {
+*, *::before, *::after {
     box-sizing: border-box;
 }
 
 /* Typography */
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+h1, h2, h3, h4, h5, h6 {
     font-family: 'Exo 2', sans-serif;
-    /* Use Exo 2 for headings */
     font-weight: 700;
     margin-top: 0;
     margin-bottom: 1rem;
@@ -50,15 +39,13 @@ h2 {
     padding-bottom: 0.5rem;
 }
 
-h2::after {
-    /* Underline effect for h2 */
+h2::after {  /* Underline effect for h2 */
     content: '';
     position: absolute;
     left: 50%;
     bottom: 0;
     transform: translateX(-50%);
     width: 60px;
-    /* Wider underline */
     height: 3px;
     background-color: #00ffff;
     border-radius: 5px;
@@ -86,33 +73,47 @@ a:hover {
 
 header {
     background-color: rgba(0, 0, 0, 0.8);
-    padding: 1.5rem 0;
+    padding: 1.5rem 2rem; /* Add horizontal padding to header */
     position: sticky;
     top: 0;
     z-index: 100;
     display: flex;
-    /* Use flexbox for header layout */
     justify-content: space-between;
-    /* Distribute space */
     align-items: center;
-    /* Vertically center items */
     flex-wrap: wrap;
-    /* Allow wrapping on smaller screens */
+}
+
+.logo {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #00ffff;
+    text-decoration: none; /* Remove default link styling if needed */
+    position: relative; /* For the TV effect (if you add it back) */
+    z-index: 2;
+    white-space: nowrap; /* Prevent logo text from wrapping */
+    flex: 0 0 auto;     /* Prevent logo from shrinking/growing */
+    margin-right: 2rem; /* Add some space between logo and nav */
+}
+
+.logo .logo-placeholder {
+    visibility: hidden;
+    position: absolute;
 }
 
 nav {
-    width: 100%;
-    /* Occupy full width initially */
+    width: auto;
     text-align: center;
-    /* Center the navigation links */
+    margin-left: auto;
+    margin-right: auto;
+    flex-grow: 1;       /* Allow nav to grow and take available space */
 }
 
 nav ul {
     list-style: none;
     padding: 0;
     margin: 0;
-    display: inline-block;
-    /* Important for centering */
+    display: inline-block; /* Key for centering */
 }
 
 nav ul li {
@@ -141,10 +142,8 @@ nav ul li a.active {
 }
 
 .social-icons {
-    margin-right: 2rem;
-    /* Add some margin on the right */
-    position: absolute;
-    right: 10px;
+    flex: 0 0 auto; /* Prevent social icons from shrinking/growing*/
+    white-space: nowrap;
 }
 
 .social-icons a {
@@ -157,7 +156,6 @@ nav ul li a.active {
 .social-icons a:hover {
     color: #00ffff;
 }
-
 /* ------------------------------------ */
 /*              Content Sections        */
 /* ------------------------------------ */
@@ -166,7 +164,7 @@ nav ul li a.active {
     padding: 5rem 0;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 5rem 2rem;
+     padding: 5rem 2rem;
 }
 
 /* About Section */
@@ -350,37 +348,28 @@ footer {
 
 /* --- Media Queries (Responsive) --- */
 
-/* --- Mobile/Tablet (Portrait & Landscape) --- */
-/* Improved Responsiveness */
 @media (max-width: 768px) {
     header {
         flex-direction: column;
-        /* Stack header elements vertically */
-        padding: 1rem 0;
-        /* Adjust padding */
+        padding: 1rem; /*Less padding*/
+        text-align: center;
+    }
+
+    .logo {
+        margin-left: 0;
+        margin-bottom: 1rem;
     }
 
     nav {
         width: 100%;
-        /* Ensure nav takes full width */
         margin-bottom: 1rem;
-        /* Space between nav and social icons */
+    }
+     nav ul li{
+        display: block;
+        margin: 10px 0;
     }
 
     .social-icons {
-        position: static;
-        /* Remove absolute positioning */
-        text-align: center;
-        /* Center the social icons */
-        margin-top: 1rem;
-        /* Add some space above the icons */
-        padding-bottom: 23px;
         margin-right: 0;
-    }
-
-    .social-icons a {
-        font-size: 1rem;
-        margin: 0 0.5rem;
-        /* Adjust horizontal spacing */
     }
 }
