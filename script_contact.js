@@ -2,22 +2,30 @@ document.addEventListener('DOMContentLoaded', function () {
     const form = document.getElementById('contact-form');
     const formResult = document.getElementById('form-result');
 
+    // Check if form element is found. This is a crucial debugging step.
+    if (!form) {
+        console.error("ERROR: Could not find the form element with id 'contact-form'.  Check your HTML.");
+        return; // Stop execution if the form isn't found.
+    }
+
     form.addEventListener('submit', async function (event) {
-        event.preventDefault();
+        event.preventDefault(); // Prevent default form submission
 
         const formData = new FormData(form);
 
-        // *** CORRECTED: Use the Formspree endpoint directly here ***
-        const formspreeEndpoint = "https://formspree.io/f/xqapznnb"; // Replace with YOUR actual endpoint
+        // Add a console.log here to make SURE this code is running.
+        console.log("Form submission intercepted.  Sending data to Formspree...");
 
         try {
-            const response = await fetch(formspreeEndpoint, { // Use the variable here
+            const response = await fetch("https://formspree.io/f/xqapznnb", { //Your Formspree Endpoint
                 method: 'POST',
                 body: formData,
                 headers: {
                     'Accept': 'application/json'
                 }
             });
+
+            console.log("Formspree response:", response); // Log the FULL response
 
             if (response.ok) {
                 formResult.innerHTML = "<p>Thanks for your submission!</p>";
