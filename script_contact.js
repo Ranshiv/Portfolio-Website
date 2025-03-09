@@ -1,3 +1,4 @@
+
 document.addEventListener('DOMContentLoaded', function () {
     const form = document.getElementById('contact-form');
     const formResult = document.getElementById('form-result');
@@ -58,3 +59,4 @@ document.addEventListener('DOMContentLoaded', function () {
             });
     });
 });
+
