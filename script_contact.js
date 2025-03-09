@@ -1,62 +1,47 @@
-
 document.addEventListener('DOMContentLoaded', function () {
     const form = document.getElementById('contact-form');
     const formResult = document.getElementById('form-result');
 
-    form.addEventListener('submit', function (event) {
+    form.addEventListener('submit', async function (event) { // Use async/await
         event.preventDefault();
 
         const formData = new FormData(form);
 
-        fetch(form.action, {
-            method: 'POST',
-            body: formData,
-            headers: {
-                'Accept': 'application/json'
-            }
-        })
-            .then(response => {
-                if (response.ok) {
-                    // Success!
-                    formResult.innerHTML = "<p>Thanks for your submission!</p>";
-                    formResult.classList.add('success'); // Add success class
-                    form.reset();
-
-                    // Set a timeout to hide the notification and redirect
-                    setTimeout(() => {
-                        formResult.classList.remove('success'); // Remove success class
-                        formResult.innerHTML = ''; //Remove the content;
-                        window.location.href = "index.html"; // Redirect to home page
-                    }, 5000); // 5000 milliseconds = 5 seconds
-                } else {
-                    // Error - get JSON response and display error message
-
-                    response.json().then(data => {
-                        formResult.classList.add('error'); // Add error class.
-                        if (Object.hasOwn(data, 'errors')) {
-                            formResult.innerHTML = "<p>Oops! There was a problem: " +
-                                data["errors"].map(error => error["message"]).join(", ") + "</p>";
-                        }
-                        else {
-                            formResult.innerHTML = "<p>Oops!  There was a problem submitting your form.</p>";
-                        }
-                        setTimeout(() => {
-                            formResult.classList.remove('error'); // Remove error class
-                            formResult.innerHTML = ''; //Remove the content;
-                            // window.location.href = "index.html"; // Redirect to home page
-                        }, 5000); // 5000 milliseconds = 5 seconds
-                    })
+        try { // Use try/catch for error handling
+            const response = await fetch(form.action, {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
                 }
-            })
-            .catch(error => {
-                formResult.classList.add('error'); // Add error class.
-                formResult.innerHTML = "<p>Oops! There was a network error. Please try again.</p>";
-                setTimeout(() => {
-                    formResult.classList.remove('error'); // Remove error class
-                    formResult.innerHTML = ''; //Remove the content;
-                    // window.location.href = "index.html"; // Redirect to home page
-                }, 5000); // 5000 milliseconds = 5 seconds
             });
+
+            if (response.ok) {
+                formResult.innerHTML = "<p>Thanks for your submission!</p>";
+                formResult.classList.add('success');
+                form.reset();
+
+                setTimeout(() => {
+                    formResult.classList.remove('success');
+                    formResult.innerHTML = '';
+                    window.location.href = "index.html";
+                }, 5000);
+
+            } else {
+                const data = await response.json(); // Await the JSON parsing
+                formResult.classList.add('error');
+                if (Object.hasOwn(data, 'errors')) {
+                    formResult.innerHTML = "<p>Oops! There was a problem: " +
+                        data.errors.map(error => error.message).join(", ") + "</p>";
+                } else {
+                    formResult.innerHTML = "<p>Oops! There was a problem submitting your form.</p>";
+                }
+            }
+
+        } catch (error) {
+            formResult.classList.add('error');
+            formResult.innerHTML = "<p>Oops! There was a network error. Please try again.</p>";
+            console.error("Network error:", error); // Log the error for debugging
+        }
     });
 });
-
