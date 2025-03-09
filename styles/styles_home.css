@@ -363,3 +363,6 @@
         /* Slightly smaller title font size */
     }
 }
+footer{
+    position:static;
+}
