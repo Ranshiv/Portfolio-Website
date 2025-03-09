@@ -1,10 +1,8 @@
-/* styles_contact.css - Contact Page Specific Styles (with Notification) */
+/* styles_contact.css - Contact Page Specific Styles */
 
-/* ... (Keep all previous styles for .contact-section, .contact-form, etc.) ... */
 .contact-section {
     background-color: #111;
-    /* Consistent background */
-    padding: 6rem 0;
+    padding: 6rem 0;  /*Consistent Padding*/
     text-align: center;
 }
 
@@ -27,13 +25,12 @@
 .contact-form input,
 .contact-form textarea {
     width: 100%;
-    /* Make fields full-width */
     padding: 1rem;
     margin-bottom: 1.5rem;
     border: none;
     border-radius: 5px;
     background-color: #333;
-    color: #fff;
+    color: #fff;  /* Consistent text color */
     font-family: inherit;
     font-size: 1rem;
 }
@@ -45,13 +42,12 @@
 
 .contact-form button {
     display: block;
-    /* Make button full-width */
     width: 100%;
     padding: 1rem;
     background-color: #00ffff;
     color: #222;
     border: none;
-    border-radius: 5px;
+    border-radius: 8px; /* Consistent border-radius */
     font-weight: 600;
     cursor: pointer;
     transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
@@ -65,35 +61,31 @@
 }
 
 /* --- Notification Styles --- */
-/* styles_contact.css - Contact Page Specific Styles (Notification Adjustments) */
-
-/* ... (Keep all previous styles for .contact-section, .contact-form, etc.) ... */
-
-/* --- Notification Styles --- */
 #form-result {
     position: fixed;
-    top: 410px;
-    /* Increased distance from the top - was 20px */
+    top: 20px;        /* Back to a reasonable top value */
     right: 20px;
     background-color: rgba(0, 255, 255, 0.95);
-    /* Increased opacity - was 0.9 */
-    color: #ffffff;
+    color: #111;      /* Default text color */
     padding: 1rem 2rem;
     border-radius: 5px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
     z-index: 1000;
     display: none;
     max-width: 300px;
+    transition: opacity 0.5s ease-in-out; /* Smooth fade-out */
 }
 
 #form-result.success {
     display: block;
+    background-color: rgba(0, 255, 0, 0.9); /* Green for success */
+    color: #fff; /* White text on green */
 }
 
 #form-result.error {
     display: block;
-    background-color: #ff0000;
-    color: white
+    background-color: rgba(255, 0, 0, 0.9); /* Red for error */
+    color: #fff;  /* White text on red */
 }
 
 /* --- Media Queries (Responsive) --- */
@@ -101,22 +93,15 @@
 @media (max-width: 768px) {
     .contact-form {
         padding: 1.5rem;
-        /* Reduce padding on smaller screens */
     }
 
-    .contact-section {
+    .contact-section{
         padding: 4rem 0;
     }
-
-    /* Adjust notification position for smaller screens */
     #form-result {
-        top: 10px;
-        /* Reduce top distance */
-        right: 10px;
-        /* Reduce right distance */
-        left: 10px;
-        /* Add left distance */
-        max-width: calc(100% - 20px);
-        /* Prevent overflow */
+        top: 10px;        /* Smaller top value on mobile */
+        right: 10px;      /* Smaller right value */
+        left: 10px;       /* Add left value for centering */
+        max-width: calc(100% - 20px); /* Prevent overflow */
     }
 }
