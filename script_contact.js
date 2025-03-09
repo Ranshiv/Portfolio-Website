@@ -1,3 +1,5 @@
+console.log("Script Loaded!"); 
+
 document.addEventListener('DOMContentLoaded', function () {
     console.log("JavaScript Loaded - Form Handling Active");
 
