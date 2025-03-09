@@ -1,9 +1,10 @@
-/* style.css (Complete - with Logo Placeholder and Centered Nav) */
+/* style.css (Complete - Hamburger, Logo, Social Icons - Corrected) */
 
 /* ------------------------------------ */
 /*              Global Styles           */
 /* ------------------------------------ */
 
+/* Reset and Base Styles */
 body {
     background-color: #111;
     color: #f0f0f0;
@@ -16,12 +17,19 @@ body {
     -moz-osx-font-smoothing: grayscale;
 }
 
-*, *::before, *::after {
+*,
+*::before,
+*::after {
     box-sizing: border-box;
 }
 
 /* Typography */
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     font-family: 'Exo 2', sans-serif;
     font-weight: 700;
     margin-top: 0;
@@ -39,7 +47,8 @@ h2 {
     padding-bottom: 0.5rem;
 }
 
-h2::after {  /* Underline effect for h2 */
+h2::after {
+    /* Underline effect for h2 */
     content: '';
     position: absolute;
     left: 50%;
@@ -73,27 +82,53 @@ a:hover {
 
 header {
     background-color: rgba(0, 0, 0, 0.8);
-    padding: 1.5rem 2rem; /* Add horizontal padding to header */
+    padding: 1.5rem 2rem;
+    /*Consistent Padding*/
     position: sticky;
     top: 0;
     z-index: 100;
     display: flex;
-    justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
+    /* margin-top:-10px; */
+    /* Important for responsiveness */
 }
 
+/* --- Hamburger Button (Mobile) --- */
+.nav-toggle {
+    display: none;
+    /* Hidden by default on larger screens */
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    margin-right: 15px;
+    /* Space between hamburger and logo */
+}
+
+.hamburger {
+    width: 30px;
+    height: 3px;
+    background-color: #fff;
+    display: block;
+    margin: 6px 0;
+    transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
+}
+
+/* --- Logo --- */
 .logo {
     font-family: 'Rajdhani', sans-serif;
     font-size: 1.8rem;
     font-weight: 700;
     color: #00ffff;
-    text-decoration: none; /* Remove default link styling if needed */
-    position: relative; /* For the TV effect (if you add it back) */
+    text-decoration: none;
+    position: relative;
     z-index: 2;
-    white-space: nowrap; /* Prevent logo text from wrapping */
-    flex: 0 0 auto;     /* Prevent logo from shrinking/growing */
-    margin-right: 2rem; /* Add some space between logo and nav */
+    white-space: nowrap;
+    flex: 0 0 auto;
+    /* Prevent logo from shrinking/growing */
+    margin-right: auto;
+    /* Push logo to the left, nav to center */
 }
 
 .logo .logo-placeholder {
@@ -101,27 +136,26 @@ header {
     position: absolute;
 }
 
-nav {
-    width: auto;
+/* --- Navigation Menu --- */
+.nav-menu {
     text-align: center;
-    margin-left: auto;
-    margin-right: auto;
-    flex-grow: 1;       /* Allow nav to grow and take available space */
+    flex-grow: 1;
 }
 
-nav ul {
+.nav-menu ul {
     list-style: none;
     padding: 0;
     margin: 0;
-    display: inline-block; /* Key for centering */
+    display: inline-block;
+    /* Key for centering */
 }
 
-nav ul li {
+.nav-menu ul li {
     display: inline;
     margin: 0 1.5rem;
 }
 
-nav ul li a {
+.nav-menu ul li a {
     color: #00ffff;
     text-decoration: none;
     font-weight: 500;
@@ -131,19 +165,21 @@ nav ul li a {
     border-radius: 5px;
 }
 
-nav ul li a:hover {
+.nav-menu ul li a:hover {
     color: #ffcc00;
     background-color: rgba(255, 204, 0, 0.1);
 }
 
-nav ul li a.active {
+.nav-menu ul li a.active {
     color: #ffcc00;
     font-weight: 600;
 }
 
+/* --- Social Icons --- */
 .social-icons {
-    flex: 0 0 auto; /* Prevent social icons from shrinking/growing*/
+    margin-left: auto;
     white-space: nowrap;
+    /* Prevent icons from wrapping */
 }
 
 .social-icons a {
@@ -156,6 +192,85 @@ nav ul li a.active {
 .social-icons a:hover {
     color: #00ffff;
 }
+
+/* --- Media Query (Mobile Styles - ONLY for .home-page) --- */
+
+@media (max-width: 768px) {
+
+    /* Only apply these styles on the home page */
+    .home-page .nav-toggle {
+        display: block;
+        /* Show hamburger button */
+    }
+
+    .home-page header {
+        /* flex-direction: column; */
+        padding: 1rem;
+        /* Adjust padding */
+        justify-content: space-between;
+    }
+
+    .home-page .logo {
+        margin: 0;
+        /* Remove margins */
+        order: 0;
+        /* Ensure logo comes *after* hamburger */
+        text-align: center;
+        /* Center logo on mobile */
+        flex: 1;
+
+    }
+
+    .home-page .nav-menu {
+        display: none;
+        /* Hide nav menu by default */
+        position: absolute;
+        top: 60px;
+        /* Adjust as needed */
+        left: 0;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.9);
+        flex-direction: column;
+        align-items: center;
+        padding: 1rem 0;
+    }
+
+    .home-page .nav-menu ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .home-page .nav-menu.active {
+        display: flex;
+        /* Show when 'active' class is present */
+    }
+
+    .home-page .nav-menu ul li {
+        display: block;
+        /* Stack links vertically */
+        margin: 1rem 0;
+        /* Add vertical spacing */
+        text-align: center;
+        /* Center-align the links */
+    }
+
+    .home-page .social-icons {
+        position: static;
+        /* Let social icons flow naturally */
+        margin-top: 1rem;
+        /* Remove left margin */
+        margin-bottom: -0.5rem;
+        /* Add space below logo */
+        margin-right: 0;
+        text-align: center;
+    }
+
+    .home-page footer {
+        position: static;
+    }
+}
+
 /* ------------------------------------ */
 /*              Content Sections        */
 /* ------------------------------------ */
@@ -164,7 +279,7 @@ nav ul li a.active {
     padding: 5rem 0;
     max-width: 1200px;
     margin: 0 auto;
-     padding: 5rem 2rem;
+    padding: 5rem 2rem;
 }
 
 /* About Section */
@@ -344,32 +459,4 @@ footer {
     max-width: 1400px;
     margin: 0 auto;
     padding: 0 2rem;
-}
-
-/* --- Media Queries (Responsive) --- */
-
-@media (max-width: 768px) {
-    header {
-        flex-direction: column;
-        padding: 1rem; /*Less padding*/
-        text-align: center;
-    }
-
-    .logo {
-        margin-left: 0;
-        margin-bottom: 1rem;
-    }
-
-    nav {
-        width: 100%;
-        margin-bottom: 1rem;
-    }
-     nav ul li{
-        display: block;
-        margin: 10px 0;
-    }
-
-    .social-icons {
-        margin-right: 0;
-    }
 }

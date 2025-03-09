@@ -1,5 +1,6 @@
-/* styles_contact.css - Contact Page Specific Styles */
+/* styles_contact.css - Contact Page Specific Styles (with Notification) */
 
+/* ... (Keep all previous styles for .contact-section, .contact-form, etc.) ... */
 .contact-section {
     background-color: #111;
     /* Consistent background */
@@ -63,6 +64,38 @@
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
 }
 
+/* --- Notification Styles --- */
+/* styles_contact.css - Contact Page Specific Styles (Notification Adjustments) */
+
+/* ... (Keep all previous styles for .contact-section, .contact-form, etc.) ... */
+
+/* --- Notification Styles --- */
+#form-result {
+    position: fixed;
+    top: 410px;
+    /* Increased distance from the top - was 20px */
+    right: 20px;
+    background-color: rgba(0, 255, 255, 0.95);
+    /* Increased opacity - was 0.9 */
+    color: #ffffff;
+    padding: 1rem 2rem;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    display: none;
+    max-width: 300px;
+}
+
+#form-result.success {
+    display: block;
+}
+
+#form-result.error {
+    display: block;
+    background-color: #ff0000;
+    color: white
+}
+
 /* --- Media Queries (Responsive) --- */
 
 @media (max-width: 768px) {
@@ -73,5 +106,17 @@
 
     .contact-section {
         padding: 4rem 0;
+    }
+
+    /* Adjust notification position for smaller screens */
+    #form-result {
+        top: 10px;
+        /* Reduce top distance */
+        right: 10px;
+        /* Reduce right distance */
+        left: 10px;
+        /* Add left distance */
+        max-width: calc(100% - 20px);
+        /* Prevent overflow */
     }
 }
