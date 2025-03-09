@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const formData = new FormData(form);
 
         try {
-            const response = await fetch("https://formspree.io/f/YOUR_FORMSPREE_ENDPOINT", { //Replace with your form endpoint
+            const response = await fetch("https://formspree.io/f/xqapznnb", { //Replace with your form endpoint
                 method: 'POST',
                 body: formData,
                 headers: {
