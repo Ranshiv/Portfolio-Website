@@ -2,22 +2,30 @@ document.addEventListener('DOMContentLoaded', function () {
     const form = document.getElementById('contact-form');
     const formResult = document.getElementById('form-result');
 
-    // Check if form element is found. This is a crucial debugging step.
+    // *** CRITICAL DEBUGGING: Check if the form is found ***
     if (!form) {
-        console.error("ERROR: Could not find the form element with id 'contact-form'.  Check your HTML.");
-        return; // Stop execution if the form isn't found.
+        console.error("ERROR: contact-form element not found!");
+        return; // Stop execution if the form isn't found
     }
 
+    console.log("Contact form script loaded and form element found."); // Confirm script is running
+
     form.addEventListener('submit', async function (event) {
-        event.preventDefault(); // Prevent default form submission
+        event.preventDefault();
+
+        console.log("Form submission intercepted."); // Confirm event listener is working
 
         const formData = new FormData(form);
 
-        // Add a console.log here to make SURE this code is running.
-        console.log("Form submission intercepted.  Sending data to Formspree...");
+        // *** Add console.log to check formData ***
+        console.log("Form Data:", formData);
+        for (let pair of formData.entries()) {
+            console.log(pair[0] + ': ' + pair[1]);
+        }
+
 
         try {
-            const response = await fetch("https://formspree.io/f/xqapznnb", { //Your Formspree Endpoint
+            const response = await fetch("https://formspree.io/f/xqapznnb", { // Replace with your actual endpoint
                 method: 'POST',
                 body: formData,
                 headers: {
@@ -25,7 +33,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 }
             });
 
-            console.log("Formspree response:", response); // Log the FULL response
+            console.log("Formspree response:", response); // Log the response
 
             if (response.ok) {
                 formResult.innerHTML = "<p>Thanks for your submission!</p>";
