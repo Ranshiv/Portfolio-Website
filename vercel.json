@@ -9,10 +9,7 @@
             "source": "/projects",
             "destination": "/projects.html"
         },
-        {
-            "source": "/skills",
-            "destination": "/skills.html"
-        },
+        
         {
             "source": "/contact",
             "destination": "/contact.html"
