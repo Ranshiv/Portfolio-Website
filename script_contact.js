@@ -7,8 +7,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
         const formData = new FormData(form);
 
+        // *** CORRECTED: Use the Formspree endpoint directly here ***
+        const formspreeEndpoint = "https://formspree.io/f/xqapznnb"; // Replace with YOUR actual endpoint
+
         try {
-            const response = await fetch("https://formspree.io/f/xqapznnb", { //Replace with your form endpoint
+            const response = await fetch(formspreeEndpoint, { // Use the variable here
                 method: 'POST',
                 body: formData,
                 headers: {
@@ -24,7 +27,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 setTimeout(() => {
                     formResult.classList.remove('success');
                     formResult.innerHTML = '';
-                    window.location.href = "/"; //Corrected redirect
+                    window.location.href = "/";
                 }, 5000);
 
             } else {
@@ -37,6 +40,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     formResult.innerHTML = "<p>Oops! There was a problem submitting your form.</p>";
                 }
             }
+
         } catch (error) {
             formResult.classList.add('error');
             formResult.innerHTML = "<p>Oops! There was a network error. Please try again.</p>";
