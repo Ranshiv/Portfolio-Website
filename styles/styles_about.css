@@ -116,6 +116,76 @@
 
 /* --- Media Queries (Responsive) --- */
 
+
+.achievements-certifications {
+    display: flex;
+    /* Use flexbox for side-by-side layout */
+    flex-wrap: wrap;
+    margin-top: 100px;
+    /* Allow wrapping on smaller screens */
+    justify-content: space-between;
+    /* Space between the two sections */
+    gap: 2rem;
+    /* Space between the sections */
+    width: 100%;
+    /* Take up full width */
+}
+
+.achievements,
+.certifications {
+    flex: 1;
+    /* Each section takes up half the available width */
+    min-width: 250px;
+    /* Minimum width for each section */
+    background-color: #222;
+    border-radius: 10px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.achievements h3,
+.certifications h3 {
+    color: #00ffff;
+    margin-top: 0;
+    margin-bottom: 1rem;
+    font-size: 1.4rem;
+}
+
+.achievements ul,
+.certifications ul {
+    list-style: none;
+    /* Remove bullet points */
+    padding: 0;
+    margin: 0;
+}
+
+.achievements li,
+.certifications li {
+    margin-bottom: 0.5rem;
+    color: #ccc;
+    line-height: 1.4;
+    /* Add a subtle icon (optional) */
+    padding-left: 1.5em;
+    position: relative;
+}
+
+.achievements li::before,
+.certifications li::before {
+    content: "\f00c";
+    /* Checkmark icon (Font Awesome) */
+    font-family: "Font Awesome 6 Free";
+    /* Use Font Awesome */
+    font-weight: 900;
+    position: absolute;
+    left: 0;
+    /* Position the icon at the start of the line */
+    top: 0.2em;
+    /* Adjust vertical alignment */
+    color: #00ffff;
+    /* Icon color */
+    font-size: 1em;
+    /* Adjust icon size as needed */
+}
 @media (max-width: 768px) {
     .about-content {
         flex-direction: column;
@@ -135,5 +205,9 @@
 
     .download-resume-button {
         font-size: 1rem;
+    }
+
+    .achievements-certifications {
+        margin-top: 0px;
     }
 }
