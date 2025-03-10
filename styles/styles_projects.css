@@ -56,12 +56,13 @@
     
             width: 100%;
             /* Adjust width as needed */
-            height: 47%;
+            /* height: 47%; */
             /* Maintains aspect ratio */
             /* max-height: 1000px; */
             /* Set this to match the Valhalla image */
             object-fit: cover;
             /* Ensures the image fills the space properly */
+            margin-bottom:110px;
         
 }
 
@@ -138,5 +139,8 @@
 
     .projects-section {
         padding: 4rem 0;
+    }
+    .project-card #threadspng{
+        margin-bottom:0px;
     }
 }
